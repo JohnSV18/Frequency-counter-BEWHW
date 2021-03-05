@@ -16,7 +16,8 @@ class HashTable:
     arr = []
 
     for i in range(size):
-      arr.append(LinkedList())
+      linked_list = LinkedList()
+      arr.append(linked_list)
 
     return arr
 
@@ -47,6 +48,7 @@ class HashTable:
 
     if self.arr[key_hash] == None:
       self.arr[key_hash] = (key, value)
+      return key_hash
 
     else:
 
@@ -54,9 +56,10 @@ class HashTable:
 
       while ptr != key_hash:
         if self.arr[ptr] == None:
-          self.arr[ptr] = (key, value)
+          self.arr[ptr] = (key,value)
         else:
           ptr =  (ptr + 1) % self.size
+      return key_hash
 
 
 
@@ -74,8 +77,8 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    for LinkedList in self.arr:
-      LinkedList.print_nodes()
+    for linked_list in self.arr:
+      linked_list.print_nodes()
 
   
 
